@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.maquinaexpendedora.HelloController">
+   <bottom>
+      <HBox prefHeight="101.0" prefWidth="858.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="estadoCompra" alignment="CENTER" prefHeight="34.0" prefWidth="313.0" style="-fx-border-color: black;" text="ESTADO DE LA COMPRA">
+               <HBox.margin>
+                  <Insets left="545.0" />
+               </HBox.margin>
+            </Label>
+         </children></HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="469.0" prefWidth="252.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="326.0" prefWidth="271.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="83.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="85.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="84.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets top="70.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="unCentimo" alignment="CENTER" mnemonicParsing="false" onAction="#adduncent" text="0,01€" />
+                  <Button fx:id="diezCentimos" alignment="CENTER" mnemonicParsing="false" onAction="#adddiezcent" text="0.10€" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="veinteCentimos" alignment="CENTER" mnemonicParsing="false" onAction="#addveintecent" text="0.20€" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="unoEuro" alignment="CENTER" mnemonicParsing="false" onAction="#adduno" text="1 €" GridPane.rowIndex="2" />
+                  <Button fx:id="dosEuros" alignment="CENTER" mnemonicParsing="false" onAction="#adddos" text="2 €" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Button fx:id="dosCentimos" alignment="CENTER" mnemonicParsing="false" onAction="#adddoscent" text="0,02€" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Button fx:id="cincuentaCentimos" alignment="CENTER" mnemonicParsing="false" onAction="#addcincuentacent" text="0.50€" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="cincoCentimos" alignment="CENTER" mnemonicParsing="false" onAction="#addcincocent" text="0,05€" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+               </children>
+            </GridPane>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="aceptarCompra" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#compraHecha" prefHeight="25.0" prefWidth="82.0" text="COMPRAR">
+                     <HBox.margin>
+                        <Insets bottom="30.0" left="20.0" right="20.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="devolverElDinero" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#compraCancelada" prefHeight="25.0" prefWidth="88.0" text="CANCELAR">
+                     <HBox.margin>
+                        <Insets bottom="30.0" left="80.0" right="20.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="322.0" prefWidth="309.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="comprarAgua" mnemonicParsing="false" onAction="#compraagua" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Imagenes/agua.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="comprarGoma" mnemonicParsing="false" onAction="#compragoma" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Imagenes/goma-de-borrar-milan-430.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="comprarLapiz" mnemonicParsing="false" onAction="#compralapiz" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Imagenes/lapiz-staedler-b-1.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="comprarSacapuntas" mnemonicParsing="false" onAction="#comprasacapuntas" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+               <graphic>
+                  <ImageView fitHeight="73.0" fitWidth="81.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Imagenes/sacapuntas.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="comprarBoligrafo" mnemonicParsing="false" onAction="#compraboli" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Imagenes/boligrafo.jpg" />
+                     </image></ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="comprarTipex" mnemonicParsing="false" onAction="#compratipex" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="81.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@Imagenes/tipex.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label text="AGUA" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+            <Label alignment="CENTER" text="GOMA" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+            <Label text="LÁPIZ" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+            <Label text="BOLÍGRAFO AZUL" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+            <Label text="SACA PUNTAS" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+            <Label text="TIPEX" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin></Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </GridPane>
+   </left>
+   <center>
+      <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="323.0" prefWidth="189.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="118.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="193.0" text="TOTAL INGRESADO " GridPane.columnSpan="2" GridPane.valignment="TOP" />
+            <Label fx:id="totalDinero" prefHeight="89.0" prefWidth="189.0" style="-fx-border-color: black;" GridPane.columnSpan="2" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="187.0" text="PRECIO DEL PRODUCTO" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label fx:id="totalDineroDos" layoutX="10.0" layoutY="34.0" prefHeight="89.0" prefWidth="194.0" style="-fx-border-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="12.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <Label text="MAQUINA EXPENDEDORA" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
